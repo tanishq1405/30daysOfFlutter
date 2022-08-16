@@ -1,0 +1,2 @@
+using external packages in flutter:
+for e.g. using google fonts inside of flutter we have to first import the google fonts package
