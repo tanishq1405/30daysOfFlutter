@@ -1,5 +1,6 @@
 import 'package:catalog_app/screens/home_page.dart';
 import 'package:catalog_app/screens/login_page.dart';
+import 'package:catalog_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,12 +25,14 @@ class MyApp extends StatelessWidget {
         // fontFamily: GoogleFonts.balooBhai2().fontFamily,
         // primaryTextTheme: GoogleFonts.latoTextTheme(),
       ),
-      initialRoute: "/home",
+      // initialRoute: "/home",
       routes: {
         "/": (context) => const LoginPage(),
-        "/home": (context) => HomePage(),
-        // "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+        
       },
     );
   }
 }
+// We use the "navigator" class to move between different routes for e.g. changing the screee on press of a button 
