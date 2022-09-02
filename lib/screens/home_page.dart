@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,8 @@ class HomePage extends StatelessWidget {
       body: const Center(
         child: Text("Welcome to 30 days of flutter"),
       ),
+      // ignore: prefer_const_constructors
+      drawer: myDrawer(),
     );
   }
 }
