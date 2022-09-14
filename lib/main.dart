@@ -1,7 +1,8 @@
 import 'package:catalog_app/screens/home_page.dart';
 import 'package:catalog_app/screens/login_page.dart';
+import 'package:catalog_app/utils/routes.dart';
+import 'package:catalog_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,21 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
       themeMode: ThemeMode.light,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // fontFamily: GoogleFonts.balooBhai2().fontFamily,
-        // primaryTextTheme: GoogleFonts.latoTextTheme(),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       initialRoute: "/home",
       routes: {
         "/": (context) => const LoginPage(),
-        "/home": (context) => HomePage(),
-        // "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
       },
     );
   }
 }
+// We use the "navigator" class to move between different routes for e.g. changing the screen on press of a button
